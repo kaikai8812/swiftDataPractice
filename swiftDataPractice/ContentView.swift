@@ -25,13 +25,15 @@ struct ContentView: View {
                     Text("\(String(user.age))歳")
                         .padding(.leading, 10)
                     Spacer()
-                    Button("編集する") {
-                        sheet.toggle()
-                    }
+                    Text("編集する")
+                        .onTapGesture {
+                            sheet.toggle()
+                        }
                     Spacer()
-                    Button("削除する") {
-                        context.delete(user)
-                    }
+                    Text("削除する")
+                        .onTapGesture {
+                            context.delete(user)
+                        }
                 }
                 .sheet(isPresented: $sheet) {
                     Button("cancel") {
