@@ -35,11 +35,9 @@ struct ContentView: View {
                             context.delete(user)
                         }
                 }
-                .sheet(isPresented: $sheet) {
-                    Button("cancel") {
-                        sheet.toggle()
-                    }
-                }
+                .sheet(isPresented: $sheet, content: {
+                    SheetView(user: user, isShow: sheet)
+                })
             }
             
             Button("追加する") {

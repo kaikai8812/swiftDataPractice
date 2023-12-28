@@ -12,6 +12,7 @@
 		E83F040C2B3B0DE0009D3980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83F040B2B3B0DE0009D3980 /* Assets.xcassets */; };
 		E83F040F2B3B0DE0009D3980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83F040E2B3B0DE0009D3980 /* Preview Assets.xcassets */; };
 		E83F04162B3B0E09009D3980 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F04152B3B0E09009D3980 /* UserModel.swift */; };
+		E83F04182B3C7237009D3980 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F04172B3C7237009D3980 /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E83F040B2B3B0DE0009D3980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83F040E2B3B0DE0009D3980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83F04152B3B0E09009D3980 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E83F04172B3C7237009D3980 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				E83F040B2B3B0DE0009D3980 /* Assets.xcassets */,
 				E83F040D2B3B0DE0009D3980 /* Preview Content */,
 				E83F04152B3B0E09009D3980 /* UserModel.swift */,
+				E83F04172B3C7237009D3980 /* SheetView.swift */,
 			);
 			path = swiftDataPractice;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				E83F040A2B3B0DDF009D3980 /* ContentView.swift in Sources */,
 				E83F04162B3B0E09009D3980 /* UserModel.swift in Sources */,
+				E83F04182B3C7237009D3980 /* SheetView.swift in Sources */,
 				E83F04082B3B0DDF009D3980 /* swiftDataPracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
