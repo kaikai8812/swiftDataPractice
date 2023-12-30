@@ -22,6 +22,10 @@ final class UserStore {
     func setUser(_ user: UserModel) async{
         try! await UserRepository.shared.saveUser(user: user)
     }
+    
+    func deleteUser(_ user: UserModel) async {
+        try! await UserRepository.shared.deleteUser(user: user)
+    }
 }
 
 

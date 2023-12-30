@@ -44,5 +44,14 @@ class UserRepository {
         }
     }
     
+    func deleteUser(user: UserModel) {
+        modelContext.delete(user)
+        do {
+            try modelContext.save()
+            print("contextのセーブが完了しました")
+        } catch {
+            print("データ保存が失敗しました")
+        }
+    }
     
 }

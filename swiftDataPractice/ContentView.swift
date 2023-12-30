@@ -35,7 +35,9 @@ struct ContentView: View {
                     Spacer()
                     Text("削除する")
                         .onTapGesture {
-//                            context.delete(user)
+                            Task {
+                                try await delete(user: user)
+                            }
                         }
                 }
                 .sheet(isPresented: $sheet, content: {
@@ -53,9 +55,8 @@ struct ContentView: View {
             Button("追加する") {
                 guard let age = Int(inputAge) else { return }
                 Task {
-                    try await exec(user: UserModel(name: inputName, age: age))
+                    try await save(user: UserModel(name: inputName, age: age))
                 }
-                
             }
             
             TextField("名前", text: $inputName)
@@ -69,8 +70,13 @@ struct ContentView: View {
         .padding()
     }
     
-    private func exec(user: UserModel) async throws {
+    private func save(user: UserModel) async throws {
         await store.setUser(user)
+        try await store.loadAllValue()
+    }
+    
+    private func delete(user: UserModel) async throws {
+        await store.deleteUser(user)
         try await store.loadAllValue()
     }
 }
