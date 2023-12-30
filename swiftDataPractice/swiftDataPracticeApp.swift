@@ -13,7 +13,7 @@ struct swiftDataPracticeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: UserModel.self)
+                .environment(UserStore.init())
         }
     }
 }
