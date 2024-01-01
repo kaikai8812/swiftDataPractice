@@ -41,7 +41,7 @@ struct ContentView: View {
                         }
                 }
                 .sheet(isPresented: $sheet, content: {
-                    SheetView(user: user, isShow: sheet)
+                    SheetRepositoryView(isShow: sheet, userModel: user)
                 })
             }
             .task {

@@ -33,6 +33,16 @@ class UserRepository {
         return fetchedItems
     }
     
+    func loadValue(name: String) async throws -> UserModel? {
+        try await Task.sleep(nanoseconds: UInt64(3 * 1_000_000_000))
+        let fetchDescriptor = FetchDescriptor<UserModel>()
+        let fetchedItems = try! modelContext.fetch(fetchDescriptor)
+        
+        return fetchedItems.first { fetchedUser in
+            fetchedUser.name == name
+        }
+    }
+    
     func saveUser(user: UserModel) {
         print("これが保存されているよ！\(user.name)")
         modelContext.insert(user)
@@ -46,6 +56,18 @@ class UserRepository {
     
     func deleteUser(user: UserModel) {
         modelContext.delete(user)
+        do {
+            try modelContext.save()
+            print("contextのセーブが完了しました")
+        } catch {
+            print("データ保存が失敗しました")
+        }
+    }
+    
+    func editUser(oridinalUser: UserModel, name: String?, age: Int?) {
+        let newUser = UserModel(name: name ?? oridinalUser.name, age: age ?? oridinalUser.age)
+        modelContext.insert(newUser)
+        
         do {
             try modelContext.save()
             print("contextのセーブが完了しました")

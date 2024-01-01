@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class UserModel {
-    var name: String
+    @Attribute(.unique) var name: String
     var age: Int
     
     init(name: String, age: Int) {
